@@ -95,23 +95,23 @@ if ($res && mysqli_num_rows($res) > 0) {
                 foreach ($posts as $post):
             ?>
 
-            <div class="col-md-4">
-                <div class="product-item">
-                    <a href="#"><img src="assets/images/postImage/<?php echo $post['image'] ?>" alt=""></a>
-                    <div class="down-content">
-                        <a href="#">
-                            <h4><?php echo $post['title'] ?></h4>
-                        </a>
-                        <p><?php echo $post['created_at'] ?></p>
-                        <div class="d-flex justify-content-end">
-                            <a href="viewPost.php?id=<?php echo $post['id'] ?>" class="btn btn-info "> view</a>
+                    <div class="col-md-4">
+                        <div class="product-item">
+                            <a href="#"><img src="assets/images/postImage/<?php echo $post['image'] ?>" alt=""></a>
+                            <div class="down-content">
+                                <a href="#">
+                                    <h4><?php echo $post['title'] ?></h4>
+                                </a>
+                                <p><?php echo $post['created_at'] ?></p>
+                                <div class="d-flex justify-content-end">
+                                    <a href="viewPost.php?id=<?php echo $post['id'] ?>" class="btn btn-info "> view</a>
+                                </div>
+
+                            </div>
                         </div>
-
                     </div>
-                </div>
-            </div>
 
-            <!-- Print $msg If No Posts In Database -->
+                    <!-- Print $msg If No Posts In Database -->
             <?php
                 endforeach;
             else:
@@ -131,45 +131,45 @@ if ($res && mysqli_num_rows($res) > 0) {
             <?php
             if ($page == 1) {
             ?>
-            <li class="page-item disabled">
-                <a class="page-link disabled" href="index.php?page=<?php echo $page - 1 ?>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+                <li class="page-item disabled">
+                    <a class="page-link disabled" href="index.php?page=<?php echo $page - 1 ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
 
-                </a>
+                    </a>
                 <?php
             } else {
                 ?>
-                <a class="page-link" href="index.php?page=<?php echo $page - 1 ?>" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+                    <a class="page-link" href="index.php?page=<?php echo $page - 1 ?>" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
 
-                </a>
+                    </a>
                 <?php
             }
                 ?>
-            </li>
+                </li>
 
 
 
-            <li class="page-item"><a class="page-link"><?php echo $page . " Of " . $numOfPages ?></a></li>
-            <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link"><?php echo $page . " Of " . $numOfPages ?></a></li>
+                <!-- <li class="page-item"><a class="page-link" href="#">2</a></li>
             <li class="page-item"><a class="page-link" href="#">3</a></li> -->
-            <?php
+                <?php
                 if ($page >= $numOfPages) {
                 ?>
-            <li class="page-item disabled">
-                <a class="page-link disabled" href="index.php?page=<?php echo $page + 1 ?>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            <?php
+                    <li class="page-item disabled">
+                        <a class="page-link disabled" href="index.php?page=<?php echo $page + 1 ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php
                 } else {
                 ?>
-            <li class="page-item">
-                <a class="page-link" href="index.php?page=<?php echo $page + 1 ?>" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-            <?php
+                    <li class="page-item">
+                        <a class="page-link" href="index.php?page=<?php echo $page + 1 ?>" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                <?php
                 }
                 ?>
         </ul>
